@@ -2,9 +2,10 @@
 
 <div align="center">
 
-**Clean AV Buffer Module for Fat Shark Goggles + PowerPlay DVR**
+**Clean AV Buffer Module for Analog FPV Goggles + PowerPlay DVR**
 
 [![OnShape CAD](https://img.shields.io/badge/OnShape-CAD%20Model-blue?style=for-the-badge&logo=onshape)](https://cad.onshape.com/documents/2e6892c1f7077560f1e7db3c/w/84a265bc11fc2bf27c14fb24/e/b1e7d4b621d2da3bc5834969)
+[![YouTube Demo](https://img.shields.io/badge/YouTube-Demo%20Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/c0BqS2wPbJs?si=y3qnMJqaLPZePITY)
 
 </div>
 
@@ -22,7 +23,7 @@
 
 ## 📖 Overview
 
-The FPV Signal Cleaner is a compact inline module that cleans up the composite video signal from Fat Shark FPV goggles before it reaches a DVR (like the ImmersionRC PowerPlay). While the internal video feed remains clean, the AV output suffers from amplified noise, distortion, and flashes, especially during RF signal fluctuations.
+The FPV Signal Cleaner is a compact inline module that cleans up the composite video signal from analog FPV goggles (tested with Fat Shark goggles) before it reaches a DVR (like the ImmersionRC PowerPlay). While the internal video feed remains clean, the AV output suffers from amplified noise, distortion, and flashes, especially during RF signal fluctuations.
 
 This module uses a **THS7314 video buffer chip**, low-pass filtering, and impedance matching to condition the video signal while passing audio and power through untouched. Power is taken from the PowerPlay's 7.4–8.4V barrel output and regulated to 3.3V using a buck converter to power the buffer circuit.
 
@@ -67,7 +68,7 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 ### 🔌 Connectors
 | Qty | Item | Description | Approx. Cost |
 |-----|------|-------------|--------------|
-| 1 | TRRS 3.5mm female jack | AV in from goggles | $0.50 |
+| 1 | TRRS 3.5mm female jack | AV in from analog FPV goggles | $0.50 |
 | 1 | TRRS 3.5mm male plug | AV out to PowerPlay | $0.50 |
 | 1 | 5.5x2.5mm barrel female jack | Power to goggles | $1.00 |
 | 1 | 5.5x2.5mm barrel male plug | Power from PowerPlay | $0.50 |
@@ -101,20 +102,21 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 
 ### 1. Circuit Assembly
 
-1. **Mount the THS7314** on the SOIC-8 to DIP adapter
-2. **Secure female TRRS jack and barrel jack** to the perfboard
-3. **Secure the SOIC-8 adapter** to the perfboard
-4. **Secure the buck converter** to perfboard and adjust to 3.3V output
-5. **Add power filtering capacitors**:
+1. **Cut perfboard** from 30x70mm to 30x43mm size
+2. **Mount the THS7314** on the SOIC-8 to DIP adapter
+3. **Secure female TRRS jack and barrel jack** to the perfboard
+4. **Secure the SOIC-8 adapter** to the perfboard
+5. **Secure the buck converter** to perfboard and adjust to 3.3V output
+6. **Add power filtering capacitors**:
    - 0.1µF C0G/NP0 ceramic near THS7314 VCC pin (**must be C0G/NP0 for video quality**)
    - 10µF electrolytic on 3.3V rail
-6. **Install video path components**:
+7. **Install video path components**:
    - 220nF C0G/NP0 DC blocking capacitor on video input (**must be C0G/NP0 for video quality**)
    - 75Ω resistor for impedance matching (THS7314 output)
    - 470pF C0G/NP0 low-pass filter capacitor from 75Ω (video out) to ground (**must be C0G/NP0 for video quality**)
    - 12kΩ pull-down resistor from video input to ground (for noise suppression)
-7. **Connect all grounds** together
-8. **Wire the connectors** according to the pinout
+8. **Connect all grounds** together
+9. **Wire the connectors** according to the pinout
 
 ### 2. Enclosure Assembly
 
@@ -136,7 +138,7 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 ### External Views
 ![Top Close-up](media/TopCloseUp.png)
 ![Bottom Close-up](media/BottomCloseUp.png)
-![With Goggles](media/WithGoggles.png)
+![With Analog FPV Goggles](media/WithGoggles.png)
 
 ## 📁 Project Files
 
