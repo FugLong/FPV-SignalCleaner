@@ -16,6 +16,8 @@
 <img src="https://img.youtube.com/vi/c0BqS2wPbJs/0.jpg" alt="Demo Video" width="300" height="169" style="border: 2px solid #ddd; border-radius: 8px;">
 </a>
 
+*Click the image on the right to watch the demo video!*
+
 </div>
 
 ## 📖 Overview
@@ -89,6 +91,12 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 
 **Note**: You may only care about the sleeve (Ground) and 3rd segment (Video) and can ignore the tip and 2nd segment (audio).
 
+## 🔌 Circuit Design
+
+![Circuit Diagram](hardware/FalstadScreenshot.png)
+
+*Interactive circuit simulation available: Load `hardware/AVCleanerDiagram-falstad.txt` in Falstad Circuit Simulator*
+
 ## 🛠️ Build Instructions
 
 ### 1. Circuit Assembly
@@ -116,6 +124,20 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 4. **Secure female barrel and TRRS** with glue or mounting hardware if desired
 5. **Slide the door in** to complete the enclosure
 
+## 📸 Build Photos
+
+### Internal Views
+![Internal Front View](media/InternalsFront.png)
+![Internal Perfboard](media/InternalsPerfboard.png)
+![Internal Perfboard Top](media/InternalsPerfboardTop.png)
+![Internal Wired](media/InternalsWired.png)
+![Internal Wired Alt](media/InternalsWiredAlt.png)
+
+### External Views
+![Top Close-up](media/TopCloseUp.png)
+![Bottom Close-up](media/BottomCloseUp.png)
+![With Goggles](media/WithGoggles.png)
+
 ## 📁 Project Files
 
 ### 🎨 3D Models & Enclosure
@@ -125,18 +147,6 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 ### 🔌 Circuit Design
 - **Falstad Circuit Simulator**: Load `hardware/AVCleanerDiagram-falstad.txt` to view the interactive circuit
 - **Circuit Screenshot**: `hardware/FalstadScreenshot.png`
-
-### 📸 Build Photos
-- **Front View**: `media/FrontHeadOn.png`
-- **Top Close-up**: `media/TopCloseUp.png`
-- **Bottom Close-up**: `media/BottomCloseUp.png`
-- **Internal Views**: 
-  - `media/InternalsFront.png`
-  - `media/InternalsPerfboard.png`
-  - `media/InternalsPerfboardTop.png`
-  - `media/InternalsWired.png`
-  - `media/InternalsWiredAlt.png`
-- **With Goggles**: `media/WithGoggles.png`
 
 ## 🎥 Demo Video
 
