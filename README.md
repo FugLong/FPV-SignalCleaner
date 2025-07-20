@@ -2,12 +2,17 @@
 
 <div align="center">
 
-![FPV Signal Cleaner](media/FrontHeadOn.png)
-
 **Clean AV Buffer Module for Fat Shark Goggles + PowerPlay DVR**
 
-[![Demo Video](https://img.shields.io/badge/YouTube-Demo%20Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/c0BqS2wPbJs?si=y3qnMJqaLPZePITY)
 [![OnShape CAD](https://img.shields.io/badge/OnShape-CAD%20Model-blue?style=for-the-badge&logo=onshape)](https://cad.onshape.com/documents/2e6892c1f7077560f1e7db3c/w/84a265bc11fc2bf27c14fb24/e/b1e7d4b621d2da3bc5834969)
+
+</div>
+
+<div align="center">
+
+<img src="media/FrontHeadOn.png" alt="FPV Signal Cleaner" width="300" height="auto" style="margin-right: 20px;">
+
+<iframe width="300" height="169" src="https://www.youtube.com/embed/c0BqS2wPbJs" title="FPV Signal Cleaner Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>
 
@@ -44,14 +49,15 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 ### 🎥 Video Path Components
 | Qty | Value | Description | Approx. Cost |
 |-----|-------|-------------|--------------|
-| 1 | 220nF | DC blocking cap (ceramic or film) | $0.41 |
+| 1 | 220nF | DC blocking cap (C0G/NP0 ceramic - **critical for video quality**) | $0.41 |
 | 3 | 75Ω (1%) | Input + output matching resistors | $0.12 each |
-| 1 | 470pF | Output low-pass filter cap (to GND) | $0.27 |
+| 1 | 470pF | Output low-pass filter cap (C0G/NP0 ceramic - **critical for video quality**) | $0.27 |
+| 1 | 12kΩ | Pull-down resistor for noise suppression | $0.10 |
 
 ### ⚡ Power Filtering
 | Qty | Value | Description | Approx. Cost |
 |-----|-------|-------------|--------------|
-| 1 | 0.1µF ceramic | THS7314 bypass cap (near VCC) | $0.27 |
+| 1 | 0.1µF ceramic | THS7314 bypass cap (C0G/NP0 ceramic - **critical for video quality**) | $0.27 |
 | 1 | 10µF electrolytic | Bulk cap on 3.3V rail | $0.50 |
 
 ### 🔌 Connectors
@@ -79,38 +85,34 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 - **Ring 2**: AudR
 - **Tip**: AudL
 
-**Note**: We only care about the sleeve (Ground) and 3rd segment (Video) and can ignore the tip and 2nd segment (audio).
+**Note**: You may only care about the sleeve (Ground) and 3rd segment (Video) and can ignore the tip and 2nd segment (audio).
 
 ## 🛠️ Build Instructions
 
 ### 1. Circuit Assembly
 
 1. **Mount the THS7314** on the SOIC-8 to DIP adapter
-2. **Install the buck converter** and adjust to 3.3V output
-3. **Add power filtering capacitors**:
-   - 0.1µF ceramic near THS7314 VCC pin
+2. **Secure female TRRS jack and barrel jack** to the perfboard
+3. **Secure the SOIC-8 adapter** to the perfboard
+4. **Secure the buck converter** to perfboard and adjust to 3.3V output
+5. **Add power filtering capacitors**:
+   - 0.1µF C0G/NP0 ceramic near THS7314 VCC pin (**must be C0G/NP0 for video quality**)
    - 10µF electrolytic on 3.3V rail
-4. **Install video path components**:
-   - 220nF DC blocking capacitor on video input
-   - 75Ω resistors for impedance matching (input, output, and THS7314 output)
-   - 470pF low-pass filter capacitor on video output
-5. **Connect all grounds** together
-6. **Wire the connectors** according to the pinout
+6. **Install video path components**:
+   - 220nF C0G/NP0 DC blocking capacitor on video input (**must be C0G/NP0 for video quality**)
+   - 75Ω resistor for impedance matching (THS7314 output)
+   - 470pF C0G/NP0 low-pass filter capacitor from 75Ω (video out) to ground (**must be C0G/NP0 for video quality**)
+   - 12kΩ pull-down resistor from video input to ground (for noise suppression)
+7. **Connect all grounds** together
+8. **Wire the connectors** according to the pinout
 
 ### 2. Enclosure Assembly
 
 1. **Print the enclosure parts** from the OnShape model
-2. **Mount the circuit board** inside the base
-3. **Install the TRRS jacks** and barrel connectors
-4. **Secure all components** with glue or mounting hardware
-5. **Attach the door** to complete the enclosure
-
-### 3. Testing
-
-1. **Connect to PowerPlay** using the barrel and TRRS plugs
-2. **Connect goggles** to the module's input
-3. **Power on** and verify clean video output
-4. **Test with various signal conditions** to ensure noise reduction
+2. **Insert circuit board** inside the base
+3. **Screw in and solder** TRRS jack and barrel connector
+4. **Secure female barrel and TRRS** with glue or mounting hardware if desired
+5. **Slide the door in** to complete the enclosure
 
 ## 📁 Project Files
 
@@ -160,25 +162,28 @@ The module uses a **THS7314D** 3-channel video buffer IC to:
 3. **Audio** → Passed through unchanged
 4. **Power** → Regulated and filtered for IC operation
 
-## 🤝 Contributing
+### Noise Suppression
+The **12kΩ pull-down resistor** from video input to ground serves as a critical noise suppression component:
+- **DC Bias Stabilization**: Provides a stable reference point for the video signal
+- **White Flash Reduction**: Significantly reduces large white flashes that occur during RF signal fluctuations
+- **Signal Integrity**: Helps maintain proper signal levels and prevents floating inputs
+- **Optimal Value**: 12kΩ provides the best balance - lower values (10kΩ) cut more noise but can cause sync/color issues
 
-This is an open-source project! Feel free to:
-- Report issues or bugs
-- Suggest improvements
-- Submit pull requests
-- Share your build photos
+### ⚠️ Critical Component Quality
+**C0G/NP0 capacitors are essential** for this application:
+- **Low Dielectric Absorption**: Prevents signal distortion and ghosting
+- **Temperature Stability**: Maintains consistent performance across temperature changes
+- **Video Signal Integrity**: Standard ceramic capacitors (X7R, Y5V, etc.) will cause significant video quality degradation
+- **Must Use**: 220nF, 470pF, and 0.1µF capacitors must all be C0G/NP0 grade
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Fat Shark** for the excellent FPV goggles
-- **ImmersionRC** for the PowerPlay DVR
-- **Texas Instruments** for the THS7314 video buffer IC
-- The FPV community for inspiration and feedback
-
+This project is licensed under a custom license - see the [LICENSE](LICENSE) file for details. This means you can:
+- ✅ Use, modify, and distribute this project freely
+- ✅ Build and use the device for personal, educational, or commercial purposes (paid gigs, YouTube, etc.)
+- ✅ Use it in your business or for profit-generating activities
+- ❌ **Cannot manufacture and sell the physical device** as your own product
+- ✅ Must give appropriate credit if you share modifications
 ---
 
 <div align="center">
