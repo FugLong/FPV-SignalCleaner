@@ -120,11 +120,12 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 
 ### 2. Enclosure Assembly
 
-1. **Print the enclosure parts** from the OnShape model
+1. **Print the enclosure parts** from the OnShape model *DON'T FORGET THE TRRS SPACER*
 2. **Insert circuit board** inside the base
-3. **Screw in and solder** TRRS jack and barrel connector
-4. **Secure female barrel and TRRS** with glue or mounting hardware if desired
-5. **Slide the door in** to complete the enclosure
+3. **Install TRRS spacer** - Screw the TRRS spacer piece onto the male TRRS jack **before** mounting it to the enclosure
+4. **Screw in and solder** TRRS jack and barrel connector
+5. **Secure female barrel and TRRS** with glue or mounting hardware if desired
+6. **Slide the door in** to complete the enclosure
 
 ## 📸 Build Photos
 
@@ -171,10 +172,10 @@ The module uses a **THS7314D** 3-channel video buffer IC to:
 - **Filtering**: Multiple capacitors for clean power delivery
 
 ### Signal Path
-1. **Video Input** → DC blocking cap → 75Ω resistor → THS7314 buffer
-2. **Buffer Output** → 75Ω resistor → 470pF low-pass filter → Output
-3. **Audio** → Passed through unchanged
-4. **Power** → Regulated and filtered for IC operation
+1. **Video Input** → DC blocking cap → THS7314 buffer
+2. **Buffer Output** → 75Ω resistor → Video Output → 470pF low-pass filter (goes to ground)
+3. **Audio** → Passed through unchanged (or leave disconnected)
+4. **Power** → Regulated and filtered for IC operation, passed through to goggles
 
 ### Noise Suppression
 The **12kΩ pull-down resistor** from video input to ground serves as a critical noise suppression component:
