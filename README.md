@@ -12,7 +12,9 @@
 
 <img src="media/FrontHeadOn.png" alt="FPV Signal Cleaner" width="300" height="auto" style="margin-right: 20px;">
 
-<iframe width="300" height="169" src="https://www.youtube.com/embed/c0BqS2wPbJs" title="FPV Signal Cleaner Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a href="https://youtu.be/c0BqS2wPbJs?si=y3qnMJqaLPZePITY" target="_blank">
+<img src="https://img.youtube.com/vi/c0BqS2wPbJs/0.jpg" alt="Demo Video" width="300" height="169" style="border: 2px solid #ddd; border-radius: 8px;">
+</a>
 
 </div>
 
