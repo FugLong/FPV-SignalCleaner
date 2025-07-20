@@ -77,7 +77,7 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 | Qty | Item | Use | Approx. Cost |
 |-----|------|-----|--------------|
 | 1 | 30x70mm perfboard (cut to 30x43mm) | Mount components | $2.00 |
-| 1 | 3D-printed enclosure | Enclose the module | $5.00 |
+| 1 | 3D-printed enclosure | Enclose the module | $0.50 |
 | 1 | Heat shrink / tape / glue | Wire insulation and securing parts | $3.00 |
 
 **Total Estimated Cost: ~$20-25 USD**
