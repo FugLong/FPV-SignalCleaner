@@ -144,7 +144,7 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 ## 📁 Project Files
 
 ### 🎨 3D Models & Enclosure
-- **OnShape CAD Model**: [View/Download](https://cad.onshape.com/documents/2e6892c1f7077560f1e7db3c/w/84a265bc11fc2bf27c14fb24/e/b1e7d4b621d2da3bc5834969)
+- **OnShape CAD Model**: https://cad.onshape.com/documents/2e6892c1f7077560f1e7db3c/w/84a265bc11fc2bf27c14fb24/e/b1e7d4b621d2da3bc5834969
 - **STL Files**: Available in `enclosure/PowerPlayDongle/` directory
 
 ### 🔌 Circuit Design
