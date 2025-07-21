@@ -55,9 +55,9 @@ Everything is mounted on perfboard and housed in a small enclosure that plugs di
 | Qty | Value | Description | Approx. Cost |
 |-----|-------|-------------|--------------|
 | 1 | 220nF | DC blocking cap (C0G/NP0 ceramic - **critical for video quality**) | $0.41 |
-| 3 | 75Ω (1%) | Input + output matching resistors | $0.12 each |
+| 3 | 75Ω (1%) | Output matching resistor | $0.12 |
 | 1 | 470pF | Output low-pass filter cap (C0G/NP0 ceramic - **critical for video quality**) | $0.27 |
-| 1 | 12kΩ | Pull-down resistor for noise suppression | $0.10 |
+| 1 | 12kΩ | Pull-down resistor(s) for noise suppression | $0.10 |
 
 ### ⚡ Power Filtering
 | Qty | Value | Description | Approx. Cost |
